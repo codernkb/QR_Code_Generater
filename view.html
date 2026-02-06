@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop Asset Details</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container view-container">
+      <header class="header">
+        <h1>Laptop Asset Details</h1>
+      </header>
+
+      <div class="content">
+        <div id="loadingState" class="loading-state">
+          <div class="spinner"></div>
+          <p>Loading asset details...</p>
+        </div>
+
+        <div id="errorState" class="error-state" style="display: none;">
+          <div class="error-icon">⚠️</div>
+          <h2>Invalid or Corrupted QR Code</h2>
+          <p>The QR code you scanned does not contain valid asset data.</p>
+          <p class="error-details" id="errorDetails"></p>
+        </div>
+
+        <div id="assetDetails" class="asset-card" style="display: none;">
+          <div class="asset-field">
+            <div class="field-label">Laptop Model / Details</div>
+            <div class="field-value" id="viewLaptopDetails"></div>
+          </div>
+
+          <div class="asset-field">
+            <div class="field-label">Serial Number</div>
+            <div class="field-value" id="viewSerialNumber"></div>
+          </div>
+
+          <div class="asset-field">
+            <div class="field-label">Employee ID</div>
+            <div class="field-value" id="viewEmployeeId"></div>
+          </div>
+
+          <div class="asset-field">
+            <div class="field-label">Contact Number</div>
+            <div class="field-value">
+              <a href="" id="viewContactNumber" class="contact-link"></a>
+            </div>
+          </div>
+
+          <div class="asset-field">
+            <div class="field-label">Employee Email</div>
+            <div class="field-value">
+              <a href="" id="viewEmployeeEmail" class="contact-link"></a>
+            </div>
+          </div>
+
+          <div class="asset-field">
+            <div class="field-label">Support Contact</div>
+            <div class="field-value">
+              <a href="" id="viewSupportContact" class="contact-link"></a>
+            </div>
+          </div>
+
+          <div class="asset-field">
+            <div class="field-label">Company Details</div>
+            <div class="field-value">
+              <a href="" id="viewCompanyLink" class="contact-link" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+
+          <div class="asset-field timestamp-field">
+            <div class="field-label">Generated At</div>
+            <div class="field-value" id="viewGeneratedAt"></div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="view-footer">
+        <a href="/" class="btn btn-secondary">Generate New QR Code</a>
+      </footer>
+    </div>
+
+    <script src="/viewer.js"></script>
+  </body>
+</html>

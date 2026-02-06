@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop Asset QR Generator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Laptop Asset QR Generator</h1>
+        <p>Generate QR codes for your company laptops</p>
+      </header>
+
+      <div class="content">
+        <div class="form-section" id="formSection">
+          <form id="assetForm" novalidate>
+            <div class="form-group">
+              <label for="laptopDetails">Laptop Model / Details *</label>
+              <input
+                type="text"
+                id="laptopDetails"
+                name="laptopDetails"
+                placeholder="e.g., Dell Latitude 7420"
+                required
+              />
+              <span class="error-message" id="laptopDetailsError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="serialNumber">Serial Number *</label>
+              <input
+                type="text"
+                id="serialNumber"
+                name="serialNumber"
+                placeholder="e.g., SN123456789"
+                required
+              />
+              <span class="error-message" id="serialNumberError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="employeeId">Employee ID *</label>
+              <input
+                type="text"
+                id="employeeId"
+                name="employeeId"
+                placeholder="e.g., EMP001"
+                required
+              />
+              <span class="error-message" id="employeeIdError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contactNumber">Contact Number *</label>
+              <input
+                type="tel"
+                id="contactNumber"
+                name="contactNumber"
+                placeholder="e.g., +1234567890"
+                required
+              />
+              <span class="error-message" id="contactNumberError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="employeeEmail">Employee Email *</label>
+              <input
+                type="email"
+                id="employeeEmail"
+                name="employeeEmail"
+                placeholder="e.g., john.doe@company.com"
+                required
+              />
+              <span class="error-message" id="employeeEmailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="supportContact">Support Contact Number *</label>
+              <input
+                type="tel"
+                id="supportContact"
+                name="supportContact"
+                placeholder="e.g., +1234567890"
+                required
+              />
+              <span class="error-message" id="supportContactError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="companyLink">Company Details Link *</label>
+              <input
+                type="url"
+                id="companyLink"
+                name="companyLink"
+                placeholder="e.g., https://company.com/support"
+                required
+              />
+              <span class="error-message" id="companyLinkError"></span>
+            </div>
+
+            <div class="storage-option">
+              <label class="checkbox-label">
+                <input type="checkbox" id="useBackend" name="useBackend" />
+                <span>Store in database (generates shorter QR link)</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate QR Code</button>
+          </form>
+        </div>
+
+        <div class="qr-section" id="qrSection" style="display: none;">
+          <div class="qr-actions">
+            <button type="button" class="btn btn-secondary" id="backBtn">
+              ← Back to Form
+            </button>
+          </div>
+
+          <div class="qr-preview">
+            <h2>Your QR Code</h2>
+            <div id="qrCode"></div>
+            <p class="qr-instruction">Scan this QR code to view asset details</p>
+          </div>
+
+          <div class="asset-details-preview">
+            <h3>Asset Details</h3>
+            <div id="detailsPreview"></div>
+          </div>
+
+          <div class="download-buttons">
+            <button type="button" class="btn btn-download" id="downloadPng">
+              Download PNG
+            </button>
+            <button type="button" class="btn btn-download" id="downloadSvg">
+              Download SVG
+            </button>
+            <button type="button" class="btn btn-download" id="downloadPdf">
+              Download PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="/generator.js"></script>
+  </body>
+</html>
