@@ -2,6 +2,8 @@
 
 A production-ready, single-page application for generating QR code stickers for company laptop assets. Scan any generated QR code to instantly view asset details on any mobile device.
 
+Demo at : https://laptop-asset-qr-gene-wc30.bolt.host/
+
 ## Features
 
 - **Frontend-Only Mode**: Generate QR codes with embedded data (no backend required)
