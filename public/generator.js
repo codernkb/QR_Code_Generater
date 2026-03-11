@@ -14,7 +14,6 @@ const errorElements = {
   employeeEmail: document.getElementById('employeeEmailError'),
   supportContact: document.getElementById('supportContactError'),
   companyLink: document.getElementById('companyLinkError'),
-  assetType: document.getElementById('assetTypeError'),
 };
 
 function clearErrors() {
@@ -106,11 +105,6 @@ function validateForm(formData) {
     isValid = false;
   }
 
-  if (!formData.assetType) {
-    showError('assetType', 'Asset type is required');
-    isValid = false;
-  }
-
   return isValid;
 }
 
@@ -180,10 +174,6 @@ function displayAssetDetails(assetData) {
       <div class="detail-value">${sanitizeInput(assetData.employeeId)}</div>
     </div>
     <div class="detail-row">
-      <div class="detail-label">Asset Type:</div>
-      <div class="detail-value">${sanitizeInput(assetData.assetType)}</div>
-    </div>
-    <div class="detail-row">
       <div class="detail-label">Contact Number:</div>
       <div class="detail-value">${sanitizeInput(assetData.contactNumber)}</div>
     </div>
@@ -231,7 +221,6 @@ async function handleFormSubmit(e) {
     employeeEmail: document.getElementById('employeeEmail').value.trim(),
     supportContact: document.getElementById('supportContact').value.trim(),
     companyLink: document.getElementById('companyLink').value.trim(),
-    assetType: document.getElementById('assetType').value,
     generatedAt: new Date().toISOString(),
   };
 
@@ -334,7 +323,6 @@ function downloadPDF() {
     ['Laptop Model:', currentAssetData.laptopDetails],
     ['Serial Number:', currentAssetData.serialNumber],
     ['Employee ID:', currentAssetData.employeeId],
-    ['Asset Type:', currentAssetData.assetType],
     ['Support Contact:', currentAssetData.supportContact],
   ];
 
