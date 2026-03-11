@@ -15,6 +15,7 @@ interface AssetData {
   employeeEmail: string;
   supportContact: string;
   companyLink: string;
+  assetType: string;
   generatedAt: string;
 }
 
@@ -45,6 +46,7 @@ Deno.serve(async (req: Request) => {
         !assetData.employeeEmail ||
         !assetData.supportContact ||
         !assetData.companyLink ||
+        !assetData.assetType ||
         !assetData.generatedAt
       ) {
         return new Response(
@@ -70,6 +72,7 @@ Deno.serve(async (req: Request) => {
             employee_email: assetData.employeeEmail,
             support_contact: assetData.supportContact,
             company_link: assetData.companyLink,
+            asset_type: assetData.assetType,
             generated_at: assetData.generatedAt,
           },
         ])
@@ -159,6 +162,7 @@ Deno.serve(async (req: Request) => {
         employeeEmail: data.employee_email,
         supportContact: data.support_contact,
         companyLink: data.company_link,
+        assetType: data.asset_type,
         generatedAt: data.generated_at,
       };
 

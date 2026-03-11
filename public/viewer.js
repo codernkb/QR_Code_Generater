@@ -28,6 +28,7 @@ function showAssetDetails(data) {
   document.getElementById('viewLaptopDetails').textContent = data.laptopDetails || 'N/A';
   document.getElementById('viewSerialNumber').textContent = data.serialNumber || 'N/A';
   document.getElementById('viewEmployeeId').textContent = data.employeeId || 'N/A';
+  document.getElementById('viewAssetType').textContent = data.assetType || 'N/A';
 
   const contactLink = document.getElementById('viewContactNumber');
   contactLink.textContent = data.contactNumber || 'N/A';
@@ -95,6 +96,7 @@ function validateAssetData(data) {
     'employeeEmail',
     'supportContact',
     'companyLink',
+    'assetType',
   ];
 
   for (const field of requiredFields) {
